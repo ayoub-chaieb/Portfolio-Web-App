@@ -1,10 +1,11 @@
 import smtplib, ssl
+import os
 
 
 def send_email(user_email: str, message: str):
     host = "smtp.gmail.com"
     port = 465
-    password = "lfoihpbbwvozdwiw"
+    password = os.getenv("STREAMLIT_WEB_APP_GMAIL_PASSWORD")
     receiver = "ayoubchaieb75@gmail.com"
     email = f"""\
 Subject: {user_email} wanted to reach you! || Streamlit Portfolio App 
